@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tienda.MainPage"
+             Title="Login">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Entry para el usuario -->
+        <Entry Placeholder="Usuario" x:Name="UsuarioEntry" Grid.Row="0" />
+
+        <!-- Entry para la contraseña -->
+        <Entry Placeholder="Contraseña" x:Name="ContraseñaEntry" IsPassword="True" Grid.Row="1" />
+
+        <StackLayout Orientation="Horizontal" Spacing="5" Grid.Row="2">
+            <Label Text="Recuérdame" VerticalOptions="Center" />
+            <Switch x:Name="RecuerdameSwitch" VerticalOptions="Center"/>
+        </StackLayout>
+
+        <!-- Grid para el botón con imagen -->
+        <Grid Grid.Row="0" Grid.RowSpan="4" HorizontalOptions="End">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Clicked="ImagenButton_Clicked" HorizontalOptions="End" Grid.Column="1" ImageSource="engranaje.png" HeightRequest="72" WidthRequest="72"/>
+        </Grid>
+
+        <!-- StackLayout para los botones -->
+        <StackLayout Orientation="Horizontal" Spacing="10" Grid.Row="3">
+            <!-- Botón para Entrar -->
+            <Button Text="Entrar" Clicked="EntrarButton_Clicked" HorizontalOptions="Center" />
+
+            <!-- Label para el registro -->
+            <Button Clicked="RegistrateButton_Clicked" Text="Regístrate" TextColor="Blue" HorizontalOptions="Center" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

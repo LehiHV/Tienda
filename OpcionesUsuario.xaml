@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tienda.OpcionesUsuario"
+             Title="Opciones Usuario">
+    <StackLayout>
+        <Button Text="Cambiar Información" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="Start" Clicked="CambiarInformacion_Clicked"/>
+        <Button Text="Eliminar Cuenta" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="Start" Clicked="EliminarCuenta_Clicked"/>
+    </StackLayout>
+</ContentPage>

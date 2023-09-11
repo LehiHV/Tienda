@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tienda.Tienda"
+             Title="">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Menú superior -->
+        <StackLayout Orientation="Horizontal" BackgroundColor="LightGray">
+            <Button Text="Menú Principal" Clicked="MainMenuButton_Clicked" />
+            <Button Text="Productos" Clicked="ProductsButton_Clicked" />
+            <Button Text="Usuarios" Clicked="UsersButton_Clicked" />
+            <Label x:Name="NombreUsuarioLabel" Text="" VerticalOptions="Center" TextColor="Black"/>
+            <Image x:Name="FotoUsuarioImage" HeightRequest="40" WidthRequest="40" />
+        </StackLayout>
+
+        <!-- Labels para el nombre y la foto del usuario (en el lado derecho) -->
+        
+            
+        
+
+        <!-- Listado de dos columnas -->
+        <ListView x:Name="ListViewItems" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <Label Text="{Binding Id,StringFormat='Numero de Serie: {0}'}" FontAttributes="Bold" />
+                            <Label Text="{Binding Nombre}" FontAttributes="Bold" />
+                            <Label Text="{Binding Descripcion}" />
+                            <Label Text="{Binding Cantidad, StringFormat='Cantidad: {0}'}" />
+                            <Label Text="{Binding PrecioCosto, StringFormat='Precio Costo: {0:C}'}" />
+                            <Label Text="{Binding PrecioVenta, StringFormat='Precio Venta: {0:C}'}" />
+                            <Image Source="{Binding Foto}" HeightRequest="100" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
